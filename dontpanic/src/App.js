@@ -1,30 +1,24 @@
 // import logo from './logo.svg';
 // import './App.css';
-import React from "react";
+import React, { useState }from "react";
 import Player from "./components/player";
+import Modal from "./components/modal";
+import './components/modal/modal.css';
 
 export default function App(){
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(prev => !prev)
+  };
 
   return(
     <div>
       <Player skin="m1" />
+      <div className="container">
+        <button onClick={ openModal } className="button">im button</button>
+        <Modal showModal={showModal} setShowModal={setShowModal}/>
+      </div>
     </div>
   )
 }
-
-// function App() {
-//   let post = '강남 고기 맛집'
-//   // function hundred(){
-//   //   return 100
-//   // }
-//   return (
-//     <div className="App">
-//       <div className="black-nav">
-//         <div>개발 blog</div>
-//       </div>
-//       <h4> { post } </h4>
-//     </div>
-//   );
-// }
-
-// export default App;
