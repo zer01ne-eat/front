@@ -15,7 +15,7 @@ export default function App(){
   return(
     <div>
       <Player skin="m1" />
-      <div className="container">
+      <div>
         <button onClick={ openModal } className="button">im button</button>
         <Modal showModal={showModal} setShowModal={setShowModal}/>
       </div>
